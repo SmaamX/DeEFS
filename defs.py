@@ -24,3 +24,4 @@ def dbt(mac):
     buffmc(mac) == False if None else sy("svc bluetooth disable");sy("su -c echo "+mac+" > /efs/bluetooth/bt_addr");sy("svc bluetooth enable");return(0)
 def adwlan(reg):
   for i in range(reg):mac1=dwlan("rand");sy("dumpsys wifi scan > /dev/null");print("\u001b[32m["+str(i)+","+mac1+"] packet send")
+  dwlan("rand") #jump_out
