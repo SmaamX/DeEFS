@@ -37,6 +37,6 @@ def adwlan(reg,out=False):
 def adbt(reg,out=False):
   for i in range(reg):mac1=dbt("rand");sy("su -c dumpsys bluetooth_manager >"+(("> /dev/null") if out == False else ""));print("\u001b[32m["+str(i+1)+","+mac1+"] bt packet send")
 def wjammer(reg,s):
-  for i in range(reg):macx=rch(macs);macs=dumpwlan();sl(s);dwlan(macx,rf=True);print("\u001b[32m["+str(i+1)+","+macx+"] wlan jammer packet send")
+  for i in range(reg):macs=dumpwlan();macx=rch(macs);sl(s);dwlan(macx,rf=True);print("\u001b[32m["+str(i+1)+","+macx+"] wlan jammer packet send")
 def cusefs(dict,value):sy("su -c echo "+value+" > /efs/"+dict)
 #jump_out
