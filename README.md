@@ -2,6 +2,7 @@
 DeEFS / efs editor (Samsung, ...)
 + [X] wlan jammer (scan packet)
 + [X] wlan jammer
++ [ ] wlan jammer (sniffer)
 + [X] bt jammer (scan packet)
 + [ ] bt jammer
 # important note
