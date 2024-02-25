@@ -1,4 +1,4 @@
-#SamHammer 1.0
+# DeEFS 1.0
 from random import choice as rch
 from os import system as sy
 def randma():
