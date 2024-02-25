@@ -1,4 +1,4 @@
-# DeEFS 1.0
+#DeEFS 1.2
 from random import choice as rch
 from os import system as sy
 def randma():
@@ -19,3 +19,6 @@ def dbt(mac):
     mab=randma();sy("svc bluetooth disable");sy("su -c echo "+mab+" > /efs/bluetooth/bt_addr");sy("svc bluetooth enable");return mab
   else:
     ["1","2","3","4","5","6","7","8","9","0","a","b","c","d","e","f",":"] in mac == False or len(mac) != 17 if exit(1) else sy("svc bluetooth disable");sy("su -c echo "+mac+" > /efs/bluetooth/bt_addr");sy("svc bluetooth enable");return(0)
+
+def adwlan(reg):
+  for i in range(reg):dwlan("rand");sy("dumpsys wifi scan > /dev/null");print("\u001b[32m["+str(i)+"] packet send")
