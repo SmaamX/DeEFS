@@ -23,10 +23,10 @@ def dwlan(mac,rf=False):
   if mac == "rand":
     ma=randma();
     if rf == False:sy("su -c svc wifi disable")
-    elif rf == True:sy("su -c svc wifi disable");sy("service call wifi 47")
+    elif rf == True:sy("su -c svc wifi disable");sy("su -c service call wifi 47")
     sy("su -c echo "+ma+" > /efs/wifi/.mac.cob && echo "+ma+" > /efs/wifi/.mac.info")
     if rf == False:sy("su -c svc wifi enable")
-    elif rf == True:sy("service call wifi 49")
+    elif rf == True:sy("su -c service call wifi 49")
     return ma
   else:
     buffmc(mac) == False if None else sy("su -c svc wifi disable");sy("su -c echo "+mac+" > /efs/wifi/.mac.cob && echo "+mac+" > /efs/wifi/.mac.info");sy("su -c svc wifi enable");return(0)
