@@ -1,4 +1,4 @@
-#DeEFS 1.4
+#DeEFS 1.6
 from random import choice as rch
 from os import system as sy
 def buffmc(mac):
@@ -23,8 +23,8 @@ def dbt(mac):
   else:
     buffmc(mac) == False if None else sy("svc bluetooth disable");sy("su -c echo "+mac+" > /efs/bluetooth/bt_addr");sy("svc bluetooth enable");return(0)
 def adwlan(reg,out=True):
-  for i in range(reg):mac1=dwlan("rand");sy("dumpsys wifi scan "+("> /dev/null")) if out == False else "");print("\u001b[32m["+str(i)+","+mac1+"] wlan packet send")
+  for i in range(reg):mac1=dwlan("rand");sy("dumpsys wifi scan "+("> /dev/null") if out == False else "");print("\u001b[32m["+str(i)+","+mac1+"] wlan packet send")
 def adbt(reg,out=True):
-  for i in range(reg):mac1=dbt("rand");sy("dumpsys bluetooth_manager >"+("> /dev/null")) if out == False else ""));print("\u001b[32m["+str(i)+","+mac1+"] bt packet send")
-def cusefs(dict,value):sy("su -c echo "+value+" > /efs/"+dict
+  for i in range(reg):mac1=dbt("rand");sy("dumpsys bluetooth_manager >"+("> /dev/null") if out == False else "");print("\u001b[32m["+str(i)+","+mac1+"] bt packet send")
+def cusefs(dict,value):sy("su -c echo "+value+" > /efs/"+dict)
 #jump_out
